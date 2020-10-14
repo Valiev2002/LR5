@@ -1,0 +1,39 @@
+#include <iostream>
+#include <unordered_map>
+#include <string>
+#include <map>
+#include <algorithm>
+
+using namespace std;
+
+typedef unordered_multimap<int, string>::iterator umit; 
+int main()
+{
+unordered_multimap<int,string> umm2 ({{1,"swag"}, 
+                                           {2,"grrrrpow"}, 
+                                           { 3,"hustle"}, 
+                                    
+                                           {3,"hustle"}, 
+                                           {2,"grrrrpow"}, 
+                                           {1,"swag"}}); 
+  
+umm2.erase(3);
+umm2.erase(2);
+umm2.insert(make_pair(1,"kchao") );
+umm2.insert(make_pair(1,"ya skorost") );
+umm2.insert(make_pair(1,"samosval ") );
+map <int, string> umm2;
+
+    umit i = umm2.begin();
+    for (; i != umm2.end(); i++) umm2.insert(pair<int, string>(i->first, i->second));
+    auto printU = [](const pair<int,string> n)
+     { 
+        std::cout << "<" << n.first << ", " << n.second << ">  ";
+    };
+    
+    for_each (umm2.cbegin(), umm2.cend(), printU);
+    cout << endl;
+
+  
+return 0;
+}
