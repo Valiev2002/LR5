@@ -70,4 +70,4 @@ int main() {
     set<int>set (v0.begin(), v0.end());//копиркем с начала и до конца,то етсь весь вектор
     for_each (v0.begin(),v0.end(),printV);
 
-}
+ }
